@@ -1,0 +1,68 @@
+<!DOCTYPE HTML><html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <title>index</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="images/favicon.png" rel="shortcut icon">
+        <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+        <link href="jqueryMobile/jquery.mobile.theme-1.4.0.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile.inline-svg-1.4.0.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile.structure-1.4.0.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile.inline-png-1.4.0.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile-1.4.0.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile.external-png-1.4.0.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile.icons-1.4.0.css" rel="stylesheet">
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "jsonstore",
+   "APP_ID": "jsonstore",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "1420749232-2746434164",
+   "WORKLIGHT_PLATFORM_VERSION": "6.1.0.00.20131219-1900",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/jsonstore\/android\/"
+};</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script src="worklight/jsonstore.js"></script>
+		<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-1.4.0.js"></script>
+    </head>
+    <body style="display: none;">
+        <div data-role="page" id="page">
+            <div data-role="content" style="padding: 15px">
+                <a data-role="button" href="#" id="initbutton">Init</a>
+			<a data-role="button" href="#" id="putbutton">Data Put</a>
+			<label for="searchInput" id="label">Search Input:</label>
+			<input id="searchInput" name="searchInput" type="search" value="A00">
+			<a data-role="button" href="#" id="searchButton">Search</a>
+                <ol data-inset="true" data-role="listview" id="listview">
+                    <li data-role="list-divider" id="divider">検索結果</li>
+                </ol>
+            </div>
+        </div>
+        <script src="js/jsrender.js"></script>
+<script id="itemTemplate" type="text/x-jsrender">
+<li id="{{attr:json.itemCode}}"><a href="#{{>json.itemCode}}">{{>json.itemName}}</a></li>
+</script>
+	<script src="js/initOptions.js"></script>
+	<script src="js/jsonStore.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+    </body>
+</html>
