@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link href="jqueryMobile/jquery.mobile.theme-1.4.0.css" rel="stylesheet">
+<link href="jqueryMobile/jquery.mobile.inline-svg-1.4.0.css" rel="stylesheet">
+<link href="jqueryMobile/jquery.mobile.structure-1.4.0.css" rel="stylesheet">
+<link href="jqueryMobile/jquery.mobile.inline-png-1.4.0.css" rel="stylesheet">
+<link href="jqueryMobile/jquery.mobile-1.4.0.css" rel="stylesheet">
+<link href="jqueryMobile/jquery.mobile.external-png-1.4.0.css" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="jqueryMobile/jquery.mobile.icons-1.4.0.css">
+<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-1.4.0.js"></script>
+</head>
+<body style="display: none;">
+	<div data-role="page" id="page">
+		<div data-role="content" style="padding: 15px">
+			<a data-role="button" href="#" id="initbutton">Init</a>
+			<a data-role="button" href="#" id="putbutton">Data Put</a>
+			<label for="searchInput" id="label">Search Input:</label>
+			<input id="searchInput" name="searchInput" type="search" value="A00">
+			<a data-role="button" href="#" id="searchButton">Search</a>
+			<ol data-inset="true" data-role="listview" id="listview">
+				<li data-role="list-divider" id="divider">検索結果</li>
+			</ol>
+		</div>
+	</div>
+<script src="js/jsrender.js"></script>
+<script id="itemTemplate" type="text/x-jsrender">
+<li id="{{attr:json.itemCode}}"><a href="#{{>json.itemCode}}">{{>json.itemName}}</a></li>
+</script>
+	<script src="js/initOptions.js"></script>
+	<script src="js/jsonStore.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+</body>
+</html>
